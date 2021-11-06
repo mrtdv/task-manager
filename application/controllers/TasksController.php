@@ -38,10 +38,6 @@ class TasksController extends Controller
     public function addAction()
     {
         $this->render = new View;
-        if ($this->userstatus != 1) {
-            $content = $this->render->renderBlock(['block' => 'tasks_errorauth', 'path' => $this->path]);
-            $this->render->message('error',$content);
-        }
         if (!empty($_POST)) {
             $this->mainmodel = new Tasks;
             $post = $this->mainmodel->validatePost($_POST);
